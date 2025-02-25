@@ -1,19 +1,32 @@
 import JobHeader from "@/components/JobHeader/JobHeader";
 import React from "react";
+import SearchBar from "@/components/SearchBar";
 import { useNavigate } from "react-router-dom";
-/* import Footer from "./footer"; */
+import Footer from "@/components/Footer/Footer";
 
 const SeekHm = () => {
-  const navigate = useNavigate()
-  const handleMentor = () =>{
+  const navigate = useNavigate();
+  const handleMentor = () => {
     navigate("/mentorship");
-  }
-  const handleResources =() =>{
-    navigate("/resources")
-  }
+  };
+  const handleResources = () => {
+    navigate("/resources");
+  };
   return (
     <>
-      <JobHeader />
+      <div className="bg-neutral-200">
+        <JobHeader />
+      </div>
+
+      <div className="w-full aspect-[1728/1076] bg-gray-200 flex items-center justify-center">
+        {/* Replace the image src with your actual image URL */}
+        <img
+          src="./images/jobSeekhmHead.png"
+          alt="Responsive"
+          className="w-full h-full object-cover "
+        />
+        {/* SearchBar component in the center */}
+      </div>
       <div className="flex flex-wrap lg:flex-nowrap min-h-screen lg:ml-56">
         {/* Left Section */}
         <div className="w-full lg:w-[60%] p-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -65,16 +78,13 @@ const SeekHm = () => {
 
         {/* Right Section */}
         <div className="w-full lg:w-[33%] p-2 flex justify-center">
-  <img
-    src="./images/Group 45.png"
-    alt="Tall Image"
-    className="w-[75%] sm:w-[50%] max-w-[300px] h-auto object-contain"
-  />
-</div>
-
+          <img
+            src="./images/Group 45.png"
+            alt="Tall Image"
+            className="w-[75%] sm:w-[50%] max-w-[300px] h-auto object-contain"
+          />
+        </div>
       </div>
-
-      
 
       {/* Full-width container */}
       <div className="w-full flex justify-center">
@@ -84,7 +94,23 @@ const SeekHm = () => {
             alt="Sample Image"
             className="w-[100%] h-[90] object-cover p-4 sm:p-6 lg:p-8"
           />
-          <button onClick={handleMentor} className="absolute top-16 right-20 bg-blue-500 text-white px-12 py-4 rounded-3xl shadow-2xl border-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold hover:bg-gray-400">
+          <button
+            onClick={handleMentor}
+            className="
+    absolute 
+    top-8 right-16 
+    bg-blue-500 text-white 
+    px-8 py-3 
+    rounded-3xl shadow-2xl border-2 
+    text-base 
+    sm:right-12 sm:px-10 sm:py-3 sm:text-lg 
+    md:right-16 md:px-12 md:py-4 md:text-xl 
+    lg:top-12 lg:right-24 lg:text-2xl 
+    xl:top-16 xl:right-28 xl:text-3xl 
+    font-bold 
+    hover:bg-gray-400
+  "
+          >
             FIND MENTOR
           </button>
         </div>
@@ -106,7 +132,10 @@ const SeekHm = () => {
             Includes resources for resume building and interview preparation to
             enhance job applications.
           </p>
-          <button onClick={handleResources} className="w-full px-4 py-2 bg-blue-500 text-white rounded-full shadow-md border-2 text-sm sm:text-base md:text-lg lg:text-xl font-bold hover:bg-yellow-500 transition-all">
+          <button
+            onClick={handleResources}
+            className="w-full px-4 py-2 bg-blue-500 text-white rounded-full shadow-md border-2 text-sm sm:text-base md:text-lg lg:text-xl font-bold hover:bg-yellow-500 transition-all"
+          >
             FIND RESOURCES
           </button>
         </div>
@@ -119,7 +148,7 @@ const SeekHm = () => {
           className="w-full h-auto object-cover"
         />
       </div>
-      {/*  <Footer /> */}
+      <Footer />
     </>
   );
 };
